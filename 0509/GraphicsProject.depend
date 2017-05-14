@@ -93,3 +93,69 @@
 1494318197 source:c:\users\csaba4\documents\prog\0509\window.cpp
 	"window.hpp"
 
+1494321798 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\examplecheckbox.cpp
+	"examplecheckbox.hpp"
+	"graphics.hpp"
+
+1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\examplecheckbox.hpp
+	"graphics.hpp"
+	"widgets.hpp"
+
+1430022466 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\include\graphics.hpp
+	<string>
+
+1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\widgets.hpp
+	"graphics.hpp"
+
+1494803462 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\main.cpp
+	"graphics.hpp"
+	"widgets.hpp"
+	"examplecheckbox.hpp"
+	"statictext.hpp"
+	"texteditor.hpp"
+	"window.hpp"
+	"pushbutton.hpp"
+	"OneNumEditor.h"
+	<vector>
+	<iostream>
+	<sstream>
+
+1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\statictext.hpp
+	<string>
+	"widgets.hpp"
+
+1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\texteditor.hpp
+	<string>
+	"widgets.hpp"
+
+1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\window.hpp
+	"widgets.hpp"
+	<vector>
+
+1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\pushbutton.hpp
+	"widgets.hpp"
+	"window.hpp"
+	<functional>
+
+1494324913 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\pushbutton.cpp
+	"pushbutton.hpp"
+
+1494321798 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\statictext.cpp
+	"statictext.hpp"
+	<string>
+
+1494321798 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\texteditor.cpp
+	"texteditor.hpp"
+	<string>
+
+1494321798 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\widgets.cpp
+	"widgets.hpp"
+	"graphics.hpp"
+
+1494321798 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\window.cpp
+	"window.hpp"
+
+1494803432 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\onenumeditor.h
+	<string>
+	"widgets.hpp"
+

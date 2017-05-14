@@ -5,6 +5,7 @@
 #include "texteditor.hpp"
 #include "window.hpp"
 #include "pushbutton.hpp"
+#include "OneNumEditor.h"
 #include <vector>
 #include <iostream>
 #include <sstream>
@@ -44,6 +45,7 @@ class MyWindow : public Window {
 public:
     StaticText *tx1;
     TextEditor *ed1;
+    OneNumEditor *ed;
     PushButton *button;
     ValamiButton * vButton;
     FvPtrButton * fvptrbutton;
@@ -157,6 +159,7 @@ MyWindow::MyWindow() {
         //button = new MessageButton(this, 10, 10, 60, 60,"oda", "egyenlo");
         tx1 = new StaticText(75,20,100,40,"0");
         //ed1 = new TextEditor(10,100,100,40,"");
+        ed = new OneNumEditor(10,100,100,40,"");
         //vButton = new ValamiButton(this, 10,200,100,40,"vbut");
         //fvptrbutton = new FvPtrButton(this, 10,250,100,40,"fvptr",MyWindow::fv);
         //functorbutton = new FunctorButton(10,300,100,40,"functor",[this](){this->valami();});
@@ -177,6 +180,7 @@ MyWindow::MyWindow() {
         funbtnMultiply = new FunctorButton(320,240,40,40,"*",[this](){this->multiply();});
         widgets.push_back(tx1);
         //widgets.push_back(ed1);
+        widgets.push_back(ed);
         //widgets.push_back(button);
         //widgets.push_back(vButton);
         //widgets.push_back(fvptrbutton);
