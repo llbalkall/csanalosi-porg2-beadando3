@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1487972956 source:c:\users\balázs\desktop\prog 2\graphicsproject\main.cpp
+	"graphics.hpp"
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<math.h>
+	<time.h>
+
+1430018866 c:\users\balázs\desktop\prog 2\graphicsproject\include\graphics.hpp
+	<string>
+
+1488278466 source:c:\users\csaba4\documents\házi\házi\main.cpp
+	"graphics.hpp"
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<math.h>
+	<time.h>
+
+1430015266 c:\users\csaba4\documents\házi\házi\include\graphics.hpp
+	<string>
+
+1488286420 source:c:\users\csaba4\documents\3 ora\main.cpp
+	"graphics.hpp"
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<math.h>
+	<time.h>
+
+1430018866 c:\users\csaba4\documents\3 ora\include\graphics.hpp
+	<string>
+
+1494324367 source:c:\users\csaba4\documents\prog\0509\main.cpp
+	"graphics.hpp"
+	"widgets.hpp"
+	"examplecheckbox.hpp"
+	"statictext.hpp"
+	"texteditor.hpp"
+	"window.hpp"
+	"pushbutton.hpp"
+	<vector>
+	<iostream>
+	<sstream>
+
+1430018866 c:\users\csaba4\documents\prog\0509\include\graphics.hpp
+	<string>
+
+1494318197 c:\users\csaba4\documents\prog\0509\widgets.hpp
+	"graphics.hpp"
+
+1494318197 c:\users\csaba4\documents\prog\0509\examplecheckbox.hpp
+	"graphics.hpp"
+	"widgets.hpp"
+
+1494318197 c:\users\csaba4\documents\prog\0509\statictext.hpp
+	<string>
+	"widgets.hpp"
+
+1494318197 c:\users\csaba4\documents\prog\0509\texteditor.hpp
+	<string>
+	"widgets.hpp"
+
+1494318197 c:\users\csaba4\documents\prog\0509\window.hpp
+	"widgets.hpp"
+	<vector>
+
+1494318197 c:\users\csaba4\documents\prog\0509\pushbutton.hpp
+	"widgets.hpp"
+	"window.hpp"
+	<functional>
+
+1494318197 source:c:\users\csaba4\documents\prog\0509\examplecheckbox.cpp
+	"examplecheckbox.hpp"
+	"graphics.hpp"
+
+1494321313 source:c:\users\csaba4\documents\prog\0509\pushbutton.cpp
+	"pushbutton.hpp"
+
+1494318197 source:c:\users\csaba4\documents\prog\0509\statictext.cpp
+	"statictext.hpp"
+	<string>
+
+1494318197 source:c:\users\csaba4\documents\prog\0509\texteditor.cpp
+	"texteditor.hpp"
+	<string>
+
+1494318197 source:c:\users\csaba4\documents\prog\0509\widgets.cpp
+	"widgets.hpp"
+	"graphics.hpp"
+
+1494318197 source:c:\users\csaba4\documents\prog\0509\window.cpp
+	"window.hpp"
+
