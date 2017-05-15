@@ -111,15 +111,12 @@ public:
                             0,0,0,0,0,4,0,5,0}};
     std::vector<OneNumEditor*> mezok;
     JatekMester * Joci;
-    StaticText * tx1;
-    TextEditor * ed1;
     OneNumEditor * ed;
     FunctorButton * funbtn1;
     FunctorButton * funbtn2;
     MyWindow() ;
     void esemeny(string mitortent) {
         if (mitortent == "egyenlo") {
-            tx1->setText(ed1->value());
         }
     }
     static void fv(Window *);
@@ -148,29 +145,19 @@ public:
     }
     void teddBeJocihoz()
     {
-        for (int j=0; j<9; j++)
+        for (int q=0; q<2; q++)
         {
-            for (int i=0; i<9; i++)
+            for (int j=0; j<9; j++)
             {
-                int k=i*9+j;
-                Joci->beallit(j,i,strtnbr( mezok[k]->value()));
-                bool kalap = Joci->chekkoljaHogyJoE(j,i)<<strtnbr( mezok[k]->value());
-                mezok[k]->setbad(kalap);
+                for (int i=0; i<9; i++)
+                {
+                    int k=i*9+j;
+                    Joci->beallit(j,i,strtnbr( mezok[k]->value()));
+                    bool kalap = Joci->chekkoljaHogyJoE(j,i)<<strtnbr( mezok[k]->value());
+                    mezok[k]->setbad(kalap);
+                }
             }
         }
-        for (int j=0; j<9; j++)//ez azért kell ide mert ettõl jól mûködik, ha ezt kiszedjük
-        {
-            for (int i=0; i<9; i++)
-            {
-                int k=i*9+j;
-                Joci->beallit(j,i,strtnbr( mezok[k]->value()));
-                bool kalap = Joci->chekkoljaHogyJoE(j,i)<<strtnbr( mezok[k]->value());
-                mezok[k]->setbad(kalap);
-            }
-        }
-    }
-    void valami() {
-        tx1->setText(ed1->value());
     }
 
 };
@@ -188,7 +175,6 @@ public:
 
 
 MyWindow::MyWindow() {
-        //palyak[1] = {1,2,3,4};
         Joci= new JatekMester();
         for (int i=0; i<9; i++)
         {
@@ -204,18 +190,6 @@ MyWindow::MyWindow() {
         funbtn2 = new FunctorButton(200,20,100,40,"uj palya",[this](){this->palyavaltas();});
         widgets.push_back(funbtn1);
         widgets.push_back(funbtn2);
-}
-
-
-void MyWindow::fv(Window *w) {
-    MyWindow * mw = dynamic_cast<MyWindow*>(w);
-    if (mw) {
-        mw->valami();
-    }
-}
-
-void ValamiButton::action() {
-    mywparent->valami();
 }
 
 int main()
