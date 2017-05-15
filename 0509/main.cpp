@@ -33,6 +33,12 @@ string nmbrtstrng(int x)
     return str;
 }
 
+int strtnbr(string s)
+{
+    if (s.length()==0) return 0;
+    else return atoi(s.c_str());
+}
+
 /*void addANum(int &O, int x)
 {
     if (joe(O*10))
@@ -43,28 +49,36 @@ string nmbrtstrng(int x)
     //std::cout <<nmbrtstrng(O)<< " d" <<std::endl;
 }*/
 
-struct matrix99
-{
-    public:
-    std::vector<std::vector<int>> matrix;
-    matrix99(){matrix.resize(9, std::vector<int>(9, 0));}
-};
 
 class JatekMester
 {
-
     public:
+    int szamok[9][9];
     JatekMester();
-    matrix99 szamok;
-    bool beallitEsMegmondjaHogyEzVajonJoE(int i, int j, int v)
+
+    void beallitEsMegmondjaHogyEzVajonJoE(int i, int j, int v)
     {
-        szamok.matrix[i][j]=v;
-        return true;
+        //cout<<i<<" "<<j<<" "<<v;
+        szamok[i][j]=v;
+        cout<<v;
     }
 
     /*int value = matrix[1][2];
     matrix[3][1] = 5;*/
 };
+
+JatekMester::JatekMester()
+{
+    /*for (int i=0; i<9; i++)
+        {
+            for (int j=0; j<9; j++)
+            {
+                szamok[i][j]=0;
+                cout<<szamok[i][j];
+            }
+        }*/
+}
+
 
 class MyWindow : public Window {
 
@@ -74,12 +88,13 @@ public:
     StaticText * tx1;
     TextEditor * ed1;
     OneNumEditor * ed;
+    FunctorButton * funbtn1;
     /*PushButton * button;
     ValamiButton * vButton;
     FvPtrButton * fvptrbutton;
     FunctorButton * functorbutton;
     FunctorButton * funbtnegyenlo;
-    FunctorButton * funbtn1;
+
     FunctorButton * funbtn2;
     FunctorButton * funbtn3;
     FunctorButton * funbtn4;
@@ -105,9 +120,15 @@ public:
     static void fv(Window *);
     void teddBeJocihoz()
     {
-        for (int i=0; i<9;i++)
+
+        for (int i=0; i<9; i++)
         {
-            Joci->beallitEsMegmondjaHogyEzVajonJoE(mezok[i]->getKorx(),mezok[i]->getKory(),atoi( mezok[i]->value().c_str()));
+            for (int j=0; j<9; j++)
+            {
+                int k=i*9+j;
+                Joci->beallitEsMegmondjaHogyEzVajonJoE(mezok[k]->getKorx(),mezok[k]->getKory(),strtnbr( mezok[k]->value()));
+            }
+            cout<<endl;
         }
     }
     /*void execute()
@@ -190,7 +211,7 @@ public:
 
 
 MyWindow::MyWindow() {
-        //Joci= new JatekMester();
+        Joci= new JatekMester();
         for (int i=0; i<9; i++)
         {
             for (int j=0; j<9; j++)
@@ -198,7 +219,12 @@ MyWindow::MyWindow() {
                 ed = new OneNumEditor(100+i*25,100+j*25,25,25,"",true,i,j);
                 widgets.push_back(ed);
                 mezok.push_back(ed);
+                std::cout<<ed->getKorx()<<endl;
             }
+        }
+        for (int i=0; i<81; i++)
+        {
+                std::cout<<i<<" "<<mezok[i]->getKorx()<<endl;
         }
         /*//button = new MessageButton(this, 10, 10, 60, 60,"oda", "egyenlo");
         //tx1 = new StaticText(75,20,100,40,"0");
@@ -207,9 +233,9 @@ MyWindow::MyWindow() {
         //vButton = new ValamiButton(this, 10,200,100,40,"vbut");
         //fvptrbutton = new FvPtrButton(this, 10,250,100,40,"fvptr",MyWindow::fv);
         //functorbutton = new FunctorButton(10,300,100,40,"functor",[this](){this->valami();});
-        /*funbtnegyenlo = new FunctorButton(240,320,80,40,"=",[this](){this->egyenlo();});
-        funbtn1 = new FunctorButton(200,200,40,40,"1",[this](){this->btnN(1);});
-        funbtn2 = new FunctorButton(240,200,40,40,"2",[this](){this->btnN(2);});
+        /*funbtnegyenlo = new FunctorButton(240,320,80,40,"=",[this](){this->egyenlo();});*/
+        funbtn1 = new FunctorButton(30,20,40,40,"megcsin",[this](){this->teddBeJocihoz();});
+        /*funbtn2 = new FunctorButton(240,200,40,40,"2",[this](){this->btnN(2);});
         funbtn3 = new FunctorButton(280,200,40,40,"3",[this](){this->btnN(3);});
         funbtn4 = new FunctorButton(200,240,40,40,"4",[this](){this->btnN(4);});
         funbtn5 = new FunctorButton(240,240,40,40,"5",[this](){this->btnN(5);});
@@ -229,9 +255,9 @@ MyWindow::MyWindow() {
         //widgets.push_back(vButton);
         //widgets.push_back(fvptrbutton);
         //widgets.push_back(functorbutton );
-        /*widgets.push_back(funbtnegyenlo);
+        /*widgets.push_back(funbtnegyenlo);*/
         widgets.push_back(funbtn1);
-        widgets.push_back(funbtn2);
+        /*widgets.push_back(funbtn2);
         widgets.push_back(funbtn3);
         widgets.push_back(funbtn4);
         widgets.push_back(funbtn5);

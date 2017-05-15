@@ -4,7 +4,7 @@
 using namespace std;
 using namespace genv;
 
-OneNumEditor::OneNumEditor(int x, int y, int sx, int sy, string s, bool ee, int i, int j) : Widget(x,y,sx,sy) {_s=s; editable=ee;}
+OneNumEditor::OneNumEditor(int x, int y, int sx, int sy, string s, bool ee, int i, int j) : Widget(x,y,sx,sy) {_s=s; editable=ee; korx=i; kory=j;}
 void OneNumEditor::draw() const {
     if (_focused) {
         gout << color(255,255,255);

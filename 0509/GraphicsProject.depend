@@ -107,7 +107,7 @@
 1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\widgets.hpp
 	"graphics.hpp"
 
-1494807128 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\main.cpp
+1494810957 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\main.cpp
 	"graphics.hpp"
 	"widgets.hpp"
 	"examplecheckbox.hpp"
@@ -119,6 +119,9 @@
 	<vector>
 	<iostream>
 	<sstream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
 
 1494321798 c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\statictext.hpp
 	<string>
@@ -159,7 +162,7 @@
 	<string>
 	"widgets.hpp"
 
-1494806996 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\onenumeditor.cpp
+1494810741 source:c:\users\balázs\desktop\prog 2\3 dikk beadando\csanalosi-porg2-beadando3\0509\onenumeditor.cpp
 	"OneNumEditor.h"
 	<string>
 	"iostream"
