@@ -14,10 +14,12 @@ public:
     virtual void draw() const ;
     virtual void handle(genv::event ev) ;
     inline std::string value() {return _s;}
-    void itsbad() {bad=true;}
-    void itsnotbad() {bad=false;}
+    void setbad(bool mi) {bad=mi;}
     int getKorx() {return korx;}
     int getKory() {return kory;}
+    void setvalue(std::string sss) {_s=sss;}
+    void setEdit() {editable=true;}
+    void setNoEdit() {editable=false;}
 };
 
 #endif // ONENUMEDITOR_H
