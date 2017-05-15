@@ -82,7 +82,7 @@ JatekMester::JatekMester()
 class MyWindow : public Window {
 
 public:
-    int palyak[3][81]= {   {6,0,0,5,0,9,0,0,0,
+    int palyak[3][81]= {   {6,0,0,5,0,9,0,0,0,          // az egyik megoldható a másik kettõ nehéz
                             0,9,0,7,0,3,0,6,0,
                             0,0,8,0,4,0,0,0,0,
                             7,4,0,0,0,0,0,8,5,
