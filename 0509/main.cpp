@@ -9,6 +9,9 @@
 #include <vector>
 #include <iostream>
 #include <sstream>
+#include <string>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 using namespace genv;
@@ -40,13 +43,38 @@ string nmbrtstrng(int x)
     //std::cout <<nmbrtstrng(O)<< " d" <<std::endl;
 }*/
 
+struct matrix99
+{
+    public:
+    std::vector<std::vector<int>> matrix;
+    matrix99(){matrix.resize(9, std::vector<int>(9, 0));}
+};
+
+class JatekMester
+{
+
+    public:
+    JatekMester();
+    matrix99 szamok;
+    bool beallitEsMegmondjaHogyEzVajonJoE(int i, int j, int v)
+    {
+        szamok.matrix[i][j]=v;
+        return true;
+    }
+
+    /*int value = matrix[1][2];
+    matrix[3][1] = 5;*/
+};
+
 class MyWindow : public Window {
 
 public:
-    StaticText *tx1;
-    TextEditor *ed1;
-    OneNumEditor *ed;
-    PushButton *button;
+    std::vector<OneNumEditor*> mezok;
+    JatekMester * Joci;
+    StaticText * tx1;
+    TextEditor * ed1;
+    OneNumEditor * ed;
+    /*PushButton * button;
     ValamiButton * vButton;
     FvPtrButton * fvptrbutton;
     FunctorButton * functorbutton;
@@ -64,10 +92,10 @@ public:
     FunctorButton * funbtnPlus;
     FunctorButton * funbtnMinus;
     FunctorButton * funbtnDevide;
-    FunctorButton * funbtnMultiply;
-    int mainValue =0;
+    FunctorButton * funbtnMultiply;*/
+    /*int mainValue =0;
     int currValue =0;
-    char prevOp = '+';
+    char prevOp = '+';*/
     MyWindow() ;
     void esemeny(string mitortent) {
         if (mitortent == "egyenlo") {
@@ -75,8 +103,14 @@ public:
         }
     }
     static void fv(Window *);
-
-    void execute()
+    void teddBeJocihoz()
+    {
+        for (int i=0; i<9;i++)
+        {
+            Joci->beallitEsMegmondjaHogyEzVajonJoE(mezok[i]->getKorx(),mezok[i]->getKory(),atoi( mezok[i]->value().c_str()));
+        }
+    }
+    /*void execute()
     {
         if (prevOp=='+')
         {
@@ -103,10 +137,10 @@ public:
             //currValue=mainValue;
         }
         tx1->setText(nmbrtstrng(currValue));
-    }
+    }*/
     void valami() {
         tx1->setText(ed1->value());
-    }
+    }/*
     void egyenlo() {
         execute();
         prevOp='=';
@@ -139,7 +173,7 @@ public:
     {
         execute();
         prevOp='*';
-    }
+    }*/
 
 };
 
@@ -156,14 +190,24 @@ public:
 
 
 MyWindow::MyWindow() {
-        //button = new MessageButton(this, 10, 10, 60, 60,"oda", "egyenlo");
-        tx1 = new StaticText(75,20,100,40,"0");
+        //Joci= new JatekMester();
+        for (int i=0; i<9; i++)
+        {
+            for (int j=0; j<9; j++)
+            {
+                ed = new OneNumEditor(100+i*25,100+j*25,25,25,"",true,i,j);
+                widgets.push_back(ed);
+                mezok.push_back(ed);
+            }
+        }
+        /*//button = new MessageButton(this, 10, 10, 60, 60,"oda", "egyenlo");
+        //tx1 = new StaticText(75,20,100,40,"0");
         //ed1 = new TextEditor(10,100,100,40,"");
-        ed = new OneNumEditor(10,100,100,40,"");
+        //ed = new OneNumEditor(10,100,25,25,"",false);
         //vButton = new ValamiButton(this, 10,200,100,40,"vbut");
         //fvptrbutton = new FvPtrButton(this, 10,250,100,40,"fvptr",MyWindow::fv);
         //functorbutton = new FunctorButton(10,300,100,40,"functor",[this](){this->valami();});
-        funbtnegyenlo = new FunctorButton(240,320,80,40,"=",[this](){this->egyenlo();});
+        /*funbtnegyenlo = new FunctorButton(240,320,80,40,"=",[this](){this->egyenlo();});
         funbtn1 = new FunctorButton(200,200,40,40,"1",[this](){this->btnN(1);});
         funbtn2 = new FunctorButton(240,200,40,40,"2",[this](){this->btnN(2);});
         funbtn3 = new FunctorButton(280,200,40,40,"3",[this](){this->btnN(3);});
@@ -178,14 +222,14 @@ MyWindow::MyWindow() {
         funbtnMinus = new FunctorButton(320,280,40,40,"-",[this](){this->minusz();});
         funbtnDevide = new FunctorButton(320,200,40,40,"/",[this](){this->devide();});
         funbtnMultiply = new FunctorButton(320,240,40,40,"*",[this](){this->multiply();});
-        widgets.push_back(tx1);
+        //widgets.push_back(tx1);
         //widgets.push_back(ed1);
-        widgets.push_back(ed);
+        //widgets.push_back(ed);
         //widgets.push_back(button);
         //widgets.push_back(vButton);
         //widgets.push_back(fvptrbutton);
         //widgets.push_back(functorbutton );
-        widgets.push_back(funbtnegyenlo);
+        /*widgets.push_back(funbtnegyenlo);
         widgets.push_back(funbtn1);
         widgets.push_back(funbtn2);
         widgets.push_back(funbtn3);
@@ -199,7 +243,7 @@ MyWindow::MyWindow() {
         widgets.push_back(funbtnPlus);
         widgets.push_back(funbtnMinus);
         widgets.push_back(funbtnDevide);
-        widgets.push_back(funbtnMultiply);
+        widgets.push_back(funbtnMultiply);*/
 }
 
 
